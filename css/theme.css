@@ -17095,4 +17095,14 @@ figure.woocommerce-product-gallery__wrapper {
   color: #fff60f;
 }
 
+#right-sidebar {
+  padding: 0 0 0 70px;
+}
+
+@media (max-width: 768px) {
+  #right-sidebar {
+    padding: 0 20px;
+  }
+}
+
 /*# sourceMappingURL=theme.css.map */

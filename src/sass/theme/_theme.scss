@@ -7,3 +7,13 @@
 #main-menu .nav-link {
     color: $yellow;
 }
+
+#right-sidebar {
+    padding: 0 0 0 70px;
+}
+
+@media (max-width: 768px) { 
+    #right-sidebar {
+        padding: 0 20px;
+    }
+}
