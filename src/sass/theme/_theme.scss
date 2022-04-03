@@ -1,7 +1,22 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 
+h1, h2, h3, h4, h5, .gfield_label {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    word-spacing: .2em;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 2em 0;
+}
+
 .logo {
     height: 60px;
+}
+
+.featured-img {
+    display: block;
+    margin: 0 auto;
 }
 
 #main-menu .nav-link {
@@ -10,6 +25,15 @@
 
 #right-sidebar {
     padding: 0 0 0 70px;
+}
+
+.entry-content .gform_wrapper.gravity-theme .gfield_label{
+    margin-top: 30px;
+    font-size: 1.3em;
+}
+
+#page-wrapper, #full-width-page-wrapper {
+    background-color: $light-purple;
 }
 
 @media (max-width: 768px) { 
