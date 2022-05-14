@@ -22,7 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<!-- Your site title as branding in the menu -->
 				<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-					<img src="<?php echo get_template_directory_uri();?>/imgs/formofawesome.svg" alt="<?php bloginfo( 'name' ); ?>" class="logo">
+					<img src="<?php echo get_template_directory_uri();?>/imgs/formofawesome.png" alt="<?php bloginfo( 'name' ); ?>" class="logo">
 				</a>		
 		<!-- end custom logo -->
 
