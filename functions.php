@@ -47,8 +47,8 @@ foreach ( $understrap_includes as $file ) {
 
 //add feedback form to all things
 
-function awesome_feedback_form ( $content ) {
+// function awesome_feedback_form ( $content ) {
  
-    return $content . do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]');
-}
-add_filter( 'the_content', 'awesome_feedback_form');
+//     return $content . do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]');
+// }
+// add_filter( 'the_content', 'awesome_feedback_form');

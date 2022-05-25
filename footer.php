@@ -26,6 +26,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<footer class="site-footer" id="colophon">
 
 					<div class="site-info">
+						<?php echo do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]')?>
 
 						<?php //understrap_site_info(); ?>
 
