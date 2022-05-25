@@ -43,3 +43,12 @@ if ( class_exists( 'Jetpack' ) ) {
 foreach ( $understrap_includes as $file ) {
 	require_once get_theme_file_path( $understrap_inc_dir . $file );
 }
+
+
+//add feedback form to all things
+
+function awesome_feedback_form ( $content ) {
+ 
+    return $content . do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]');
+}
+add_filter( 'the_content', 'awesome_feedback_form');
