@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="single-wrapper">
 		<?php 
 			//global $post;
-			echo get_the_post_thumbnail( $post->ID, 'large' ); 
+			//echo get_the_post_thumbnail( $post->ID, 'large' ); 
 		?>
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
