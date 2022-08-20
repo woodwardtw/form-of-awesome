@@ -52,3 +52,68 @@ foreach ( $understrap_includes as $file ) {
 //     return $content . do_shortcode('[gravityform id="5" title="false" description="false" ajax="true"]');
 // }
 // add_filter( 'the_content', 'awesome_feedback_form');
+
+
+
+//simple GF merge field modifier that replaces the space with a dash
+add_filter( 'gform_merge_tag_filter', function ( $value, $merge_tag, $modifier, $field, $raw_value, $format ) {
+    if ( $merge_tag != 'all_fields' && $modifier == 'urlmaker' ) {
+        $value = str_replace(" ", "-", $value);
+    }
+ 
+    return $value;
+}, 10, 6 );
+
+
+//more complex GF merge field modifier that deals with mulitple entries
+add_filter( 'gform_merge_tag_filter', 'bava_modifier', 10, 6 );
+function bava_modifier ( $value, $merge_tag, $modifier, $field, $raw_value, $format ) {
+    $html = '';
+    if ( $merge_tag != 'all_fields' && $modifier == 'bavait' ) {
+        $array_it = explode(', ',$value);
+        foreach ($array_it as $item) {
+        	$hyphen = str_replace(" ", "-", $item);
+        	$url = site_url();
+    		$html .= "<a class='bava-link' href='{$url}/tag/{$hyphen}'>{$item}</a><br>";
+		}
+        $value = $html;
+    }
+ 	
+    return $value;
+}
+
+
+//as shortcode that doesn't care about gf at all, it just shows the post's tags
+function bava_tags(){
+  $post_tags = get_the_tags();
+    $html = '';
+ 
+    if ( ! empty( $post_tags ) ) {
+        foreach ( $post_tags as $tag ) {
+            $html .= '<a href="' . esc_attr( get_tag_link( $tag->term_id ) ) . '">' . __( $tag->name ) . '</a><br>';
+        }
+    }
+ 
+    return trim( $html );
+}
+add_shortcode('bava-tags', 'bava_tags');
+
+
+
+
+//fancier submission of discord submissions
+//add_filter( 'gform_webhooks_request_args', 'clean_hook_data', 10, 4 );
+
+
+
+//LOGGER -- like frogger but more useful
+
+if ( ! function_exists('write_log')) {
+   function write_log ( $log )  {
+      if ( is_array( $log ) || is_object( $log ) ) {
+         error_log( print_r( $log, true ) );
+      } else {
+         error_log( $log );
+      }
+   }
+}
